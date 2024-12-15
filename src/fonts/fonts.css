@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Telma-Medium";
+  src: url("Telma-Medium.eot");
+  src: local("Telma-Medium"), local("Telma-Medium"),
+    url("Telma-Medium.eot?#iefix") format("embedded-opentype"),
+    url("Telma-Medium.woff2") format("woff2"), url("Telma.woff") format("woff"),
+    url("Telma-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gambetta-Semibold";
+  src: url("Gambetta-Semibold.eot");
+  src: local("Gambetta-Semibold"), local("Gambetta-Semibold"),
+    url("Gambetta-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("Gambetta-Semibold.woff2") format("woff2"),
+    url("Gambetta-Semibold.woff") format("woff"),
+    url("Gambetta-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MerriweatherSans-Regular";
+  src: url("MerriweatherSans-Regular.eot");
+  src: local("MerriweatherSans-Regular"), local("MerriweatherSans-Regular"),
+    url("MerriweatherSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("MerriweatherSans-Regular.woff2") format("woff2"),
+    url("MerriweatherSans-Regular.woff") format("woff"),
+    url("MerriweatherSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
