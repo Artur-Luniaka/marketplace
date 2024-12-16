@@ -1,5 +1,15 @@
+import Auth from "./Auth";
+import Logo from "./Logo";
+import UserMenu from "./UserMenu";
+
 const Navigation = () => {
-  return <div></div>;
+  return (
+    <>
+      <Logo />
+      {/* <Auth /> */}
+      <UserMenu />
+    </>
+  );
 };
 
 export default Navigation;
