@@ -16,7 +16,7 @@
     url("Gambetta-Semibold.woff2") format("woff2"),
     url("Gambetta-Semibold.woff") format("woff"),
     url("Gambetta-Semibold.ttf") format("truetype");
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
