@@ -7,9 +7,9 @@ export default {
       container: {
         center: true,
         padding: {
-          xs: "4px",
-          md: "8px",
-          xl: "16px",
+          xs: "16px",
+          md: "16px",
+          xl: "20px",
         },
       },
     },

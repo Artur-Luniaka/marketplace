@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 
 const Layout = ({ children }) => {
   return (
-    <div className="container py-1 bg-1">
+    <div className="container max-w-full mx-auto py-1 bg-1">
       <header className="xs:items-center bg-3 p-3.5 flex justify-between rounded-lg">
         <Navigation />
       </header>
