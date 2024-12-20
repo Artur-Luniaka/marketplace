@@ -6,11 +6,12 @@ export default {
     extend: {
       container: {
         center: true,
-        padding: {
-          xs: "16px",
-          md: "16px",
-          xl: "20px",
+        screens: {
+          xs: "100%",
+          md: "768px",
+          xl: "1280px",
         },
+        padding: "16px",
       },
     },
     screens: {
