@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="bg-[url('/bg-version-3.webp')] h-[600px] bg-cover bg-center rounded-lg">
         <div className="flex h-full bg-black bg-opacity-20 rounded-lg p-2.5">
           <div className="flex order-1 items-center ml-auto md:mr-2 xl:mr-10">
-            <h1 className="text-3 text-2xl text-center font-gambetta max-w-[300px] md:text-5xl xl:text-6xl xl:max-w-[400px]">
+            <h1 className="text-3 text-2xl text-center font-gambetta max-w-[300px] md:text-5xl xl:text-6xl xl:max-w-[400px] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-[0_0_10px_rgba(66,153,255,0.6)]">
               Transforming Your Shopping Experience.
             </h1>
           </div>
@@ -17,16 +17,18 @@ const Hero = () => {
               Registrationor Login to continue
             </p> */}
             <span className="flex flex-col md:gap-5 md:my-auto xl:ml-8">
-              <button className="btn-2 p-1 rounded-lg font-merriweather flex justify-center items-center text-[12px] md:p-2 md:text-[16px] md:gap-1.5 xl:p-3 xl:text-[18px]">
+              <button className="btn-2 relative shadow-md p-1 rounded-lg font-merriweather flex justify-center items-center text-[12px] md:p-2 md:text-[16px] md:gap-1.5 xl:p-3 xl:text-[18px]">
                 Collect Cart
                 <MdOutlineShoppingCartCheckout className="text-[16px] md:text-[18px] xl:text-[20px]" />
+                <span className="absolute inset-0 bg-blue-500 blur-md opacity-50 rounded-lg animate-pulse"></span>
               </button>
               <p className="text-center text-3 font-merriweather text-[14px] md:text-[18px] xl:text-[20px]">
                 or
               </p>
-              <button className="btn-2 p-1 rounded-lg font-merriweather flex justify-center items-center text-[12px] gap-0.5 md:p-2 md:text-[16px] md:gap-1.5 xl:p-3 xl:text-[18px]">
+              <button className="btn-2 relative shadow-lg p-1 rounded-lg font-merriweather flex justify-center items-center text-[12px] gap-0.5 md:p-2 md:text-[16px] md:gap-1.5 xl:p-3 xl:text-[18px]">
                 Subscribe
                 <GiLetterBomb className="text-[16px] md:text-[18px] xl:text-[20px]" />
+                <span className="absolute inset-0 bg-blue-500 blur-md opacity-50 rounded-lg animate-pulse"></span>
               </button>
             </span>
           </div>

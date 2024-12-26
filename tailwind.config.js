@@ -4,6 +4,15 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
+      animation: {
+        sweep: "sweep 2s linear infinite",
+      },
+      keyframes: {
+        sweep: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(20%)" },
+        },
+      },
       container: {
         center: true,
         screens: {
