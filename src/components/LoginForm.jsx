@@ -1,5 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
+import { setIsLogged } from "../redux/auth/slice";
 
 const initialValues = {
   email: "",
@@ -18,8 +20,10 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const handleSubmit = (values, action) => {
     console.log(values);
+    dispatch(setIsLogged(true));
     action.resetForm();
   };
 

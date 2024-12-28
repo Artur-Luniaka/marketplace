@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -10,7 +11,7 @@ const Layout = ({ children }) => {
       <main>
         <Suspense fallback={null}>{children}</Suspense>
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 };
