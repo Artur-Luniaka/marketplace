@@ -4,7 +4,7 @@ import { GiLetterBomb } from "react-icons/gi";
 const Hero = () => {
   return (
     <>
-      <div className="bg-[url('/bg-version-3.webp')] h-[600px] bg-cover bg-center rounded-lg">
+      <div className="bg-[url('/bg-version-3.webp')] h-[600px] bg-cover bg-center rounded-lg mb-2.5">
         <div className="flex h-full bg-black bg-opacity-20 rounded-lg p-2.5">
           <div className="flex order-1 items-center ml-auto md:mr-2 xl:mr-10">
             <h1 className="text-3 text-2xl text-center font-gambetta max-w-[300px] md:text-5xl xl:text-6xl xl:max-w-[400px] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-[0_0_10px_rgba(66,153,255,0.6)]">

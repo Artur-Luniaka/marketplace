@@ -12,7 +12,9 @@ const NewArrivals = () => {
   }, [dispatch]);
   return (
     <div>
-      <h1>New Arrivals</h1>
+      <h1 className="text-1 font-gambetta text-4xl text-center mb-2.5 md:text-5xl xl:text-6xl">
+        New Arrivals
+      </h1>
       <ProductCard goods={goods} />
     </div>
   );
