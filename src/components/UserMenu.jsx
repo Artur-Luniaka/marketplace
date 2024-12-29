@@ -1,8 +1,12 @@
 import { FaCircleUser } from "react-icons/fa6";
 import { PiUserCircleGearLight } from "react-icons/pi";
 import { CgLogOut } from "react-icons/cg";
+import { useDispatch } from "react-redux";
+import { setIsLogged } from "../redux/auth/slice";
 
 const UserMenu = () => {
+  const dispatch = useDispatch();
+  const handleLogout = () => dispatch(setIsLogged(false));
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="text-3 p-1 text-2xl">
@@ -19,7 +23,11 @@ const UserMenu = () => {
           </p>
         </li>
         <li>
-          <button className="font-merriweather" type="button">
+          <button
+            onClick={handleLogout}
+            className="font-merriweather"
+            type="button"
+          >
             <CgLogOut />
             Log Out
           </button>
