@@ -1,9 +1,37 @@
+import { useSelector } from "react-redux";
+import { selectIsLogged } from "../redux/auth/selectors";
+import CartLink from "./CartLink";
 import Logo from "./Logo";
+import Payments from "./Payments";
+import SocialLinks from "./SocialLinks";
+import UserMenu from "./UserMenu";
 
 const Footer = () => {
+  const isLogged = useSelector(selectIsLogged);
   return (
-    <footer className="xs:items-center bg-3 p-3.5 flex justify-between rounded-lg mt-2.5">
-      <Logo />
+    <footer className="xs:items-center flex bg-3 p-3.5 flex-col justify-between rounded-lg mt-2.5 text-3 text-sm gap-3">
+      <div className="flex flex-col items-center gap-3 w-full">
+        <div className="flex flex-col flex-wrap w-full justify-between gap-2">
+          <Logo />
+          <p className="font-gambetta font-normal text-gray-400">
+            Your ultimate destination for a diverse selection of products,
+            crafted to suit every taste, style, and need!
+          </p>
+          <SocialLinks />
+        </div>
+        {isLogged && (
+          <div className="flex w-full justify-between flex-wrap gap-3">
+            <Payments />
+            <span className="flex place-items-center gap-2.5 text-1">
+              <CartLink />
+              <UserMenu />
+            </span>
+          </div>
+        )}
+      </div>
+      <p className="text-xs text-center text-gray-500">
+        I&A Market © 2024, All Rights Reserved
+      </p>
     </footer>
   );
 };
