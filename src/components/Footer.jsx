@@ -1,10 +1,8 @@
 import { useSelector } from "react-redux";
 import { selectIsLogged } from "../redux/auth/selectors";
-import CartLink from "./CartLink";
 import Logo from "./Logo";
 import Payments from "./Payments";
 import SocialLinks from "./SocialLinks";
-import UserMenu from "./UserMenu";
 
 const Footer = () => {
   const isLogged = useSelector(selectIsLogged);
@@ -20,12 +18,8 @@ const Footer = () => {
           <SocialLinks />
         </div>
         {isLogged && (
-          <div className="flex w-full justify-between flex-wrap gap-3">
+          <div className="w-full flex justify-end">
             <Payments />
-            <span className="flex place-items-center gap-2.5 text-1">
-              <CartLink />
-              <UserMenu />
-            </span>
           </div>
         )}
       </div>
