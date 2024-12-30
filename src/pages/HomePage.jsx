@@ -1,11 +1,11 @@
 import Hero from "../components/Hero";
-import NewArrivals from "../components/NewArrivals";
+import TopSales from "../components/TopSales";
 
 const HomePage = () => {
   return (
     <>
       <Hero />
-      <NewArrivals />
+      <TopSales />
     </>
   );
 };
