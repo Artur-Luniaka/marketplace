@@ -1,12 +1,13 @@
 import Hero from "../components/Hero";
-import NewArrivals from "../components/NewArrivals";
 import Subscribe from "../components/Subscribe";
+import TopSales from "../components/TopSales";
+
 
 const HomePage = () => {
   return (
     <>
       <Hero />
-      <NewArrivals />
+      <TopSales />
       <Subscribe />
     </>
   );
