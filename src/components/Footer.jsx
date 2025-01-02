@@ -15,13 +15,11 @@ const Footer = () => {
             Your ultimate destination for a diverse selection of products,
             crafted to suit every taste, style, and need!
           </p>
-          <SocialLinks />
         </div>
-        {isLogged && (
-          <div className="w-full flex justify-end">
-            <Payments />
-          </div>
-        )}
+        <div className="w-full flex justify-between flex-wrap gap-3">
+          <SocialLinks />
+          {isLogged && <Payments />}{" "}
+        </div>
       </div>
       <p className="text-xs text-center text-gray-500">
         I&A Market © 2024, All Rights Reserved
