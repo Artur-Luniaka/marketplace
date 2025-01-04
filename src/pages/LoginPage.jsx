@@ -2,7 +2,7 @@ import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
   return (
-    <div className="flex max-w-lg mx-auto flex-col justify-center p-6 lg:px-8 bg-2 text-2 rounded-lg w-full">
+    <div className="font-merriweather flex max-w-lg mx-auto flex-col justify-center p-6 lg:px-8 bg-2 text-2 rounded-lg w-full mb-2.5">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"

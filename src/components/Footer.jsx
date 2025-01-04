@@ -21,7 +21,7 @@ const Footer = () => {
           {isLogged && <Payments />}{" "}
         </div>
       </div>
-      <p className="text-xs text-center text-gray-500">
+      <p className="text-xs text-center text-gray-500 font-merriweather">
         I&A Market © 2024, All Rights Reserved
       </p>
     </footer>
