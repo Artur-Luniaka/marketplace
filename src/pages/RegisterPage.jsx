@@ -2,7 +2,7 @@ import RegisterForm from "../components/RegisterForm";
 
 const RegisterPage = () => {
   return (
-    <div className="flex max-w-lg mx-auto w-full flex-col justify-center p-6 lg:px-8 bg-2 text-2 rounded-lg">
+    <div className="font-merriweather flex max-w-lg mx-auto w-full flex-col justify-center p-6 lg:px-8 bg-2 text-2 rounded-lg mb-2.5">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"

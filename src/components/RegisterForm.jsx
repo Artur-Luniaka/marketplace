@@ -53,7 +53,7 @@ const RegisterForm = () => {
               type="text"
               required
               autoComplete="name"
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd] sm:text-sm/6"
+              className="block w-full rounded-md bg-white px-3 py-1.5 h-9 text-sm text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd]"
             />
           </div>
           <div className="min-h-5">
@@ -75,7 +75,7 @@ const RegisterForm = () => {
               type="text"
               required
               autoComplete="email"
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd] sm:text-sm/6"
+              className="block w-full rounded-md bg-white px-3 py-1.5 h-9 text-sm text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd]"
             />
           </div>
           <div className="min-h-5">
@@ -102,7 +102,7 @@ const RegisterForm = () => {
               name="password"
               type="password"
               required
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd] sm:text-sm/6"
+              className="block w-full rounded-md bg-white px-3 py-1.5 h-9 text-sm text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd]"
             />
           </div>
           <div className="min-h-5">
@@ -128,7 +128,7 @@ const RegisterForm = () => {
               name="confirmPwd"
               type="password"
               required
-              className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd] sm:text-sm/6"
+              className="block w-full rounded-md bg-white px-3 py-1.5 h-9 text-sm text-2 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#93c5fd]"
             />
           </div>
           <div className="min-h-5">
@@ -143,7 +143,7 @@ const RegisterForm = () => {
         <div className="mt-2">
           <button
             type="submit"
-            className="flex w-full justify-center rounded-md btn-2 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#93c5fd]"
+            className="flex w-full justify-center rounded-md btn-1 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#93c5fd]"
           >
             Register
           </button>
