@@ -6,7 +6,7 @@ const ProductCard = ({ visibleGoods }) => {
       {visibleGoods.map((item) => (
         <li
           key={item.id}
-          className="bg-2 p-2.5 mb-2.5 rounded-lg mx-auto md:w-[350px] md:mx-0 xl:w-[400px]"
+          className="bg-2 p-2.5 rounded-lg mx-auto md:w-[350px] md:mx-0 xl:w-[400px]"
         >
           <img
             className="mx-auto mb-1 w-[272px] h-[272px] object-contain md:w-[334px] md:h-[334px] md:object-contain"

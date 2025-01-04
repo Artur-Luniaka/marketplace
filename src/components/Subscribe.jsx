@@ -16,7 +16,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="flex justify-center xs:flex-col md:flex-row md:items-center mx-3  xs:gap-4 md:gap-10 p-6 bg-2 text-2 rounded-lg box-border flex-wrap relative overflow-hidden border-black border-solid border">
+    <div className="flex justify-center mb-2.5 xs:flex-col md:flex-row md:items-center mx-3  xs:gap-4 md:gap-10 p-6 bg-2 text-2 rounded-lg box-border flex-wrap relative overflow-hidden border-black border-solid border">
       <h2 className=" text-3xl text-center font-extrabold drop-shadow-lg md:w-80 xl:w-auto">
         STAY UP TO DATE ABOUT OUR LATEST OFFERS
       </h2>

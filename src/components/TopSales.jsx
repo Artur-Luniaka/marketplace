@@ -20,7 +20,7 @@ const TopSales = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="mb-2.5">
       <h1 className="text-1 font-gambetta text-4xl text-center mb-2.5 md:text-5xl xl:text-6xl">
         Top Sales
       </h1>

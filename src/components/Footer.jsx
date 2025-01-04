@@ -7,7 +7,7 @@ import SocialLinks from "./SocialLinks";
 const Footer = () => {
   const isLogged = useSelector(selectIsLogged);
   return (
-    <footer className="xs:items-center flex bg-3 p-3.5 flex-col justify-between rounded-lg mt-2.5 text-3 text-sm gap-3">
+    <footer className="xs:items-center flex bg-3 p-3.5 flex-col justify-between rounded-lg text-3 text-sm gap-3">
       <div className="flex flex-col items-center gap-3 w-full">
         <div className="flex flex-col flex-wrap w-full justify-between gap-2">
           <Logo />
