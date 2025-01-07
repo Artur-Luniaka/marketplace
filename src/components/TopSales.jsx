@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGoods } from "../redux/goods/operations";
+import { fetchTopSalesGoods } from "../redux/goods/operations";
 import { selectGoods } from "../redux/goods/selectors";
 import ProductCard from "./ProductCard";
 
@@ -16,7 +16,7 @@ const TopSales = () => {
   const visibleGoods = goods.slice(0, visibleCount);
 
   useEffect(() => {
-    dispatch(fetchGoods());
+    dispatch(fetchTopSalesGoods());
   }, [dispatch]);
 
   return (
