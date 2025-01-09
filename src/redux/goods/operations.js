@@ -27,3 +27,15 @@ export const fetchAllGoods = createAsyncThunk(
     }
   }
 );
+
+export const fetchSingleGood = createAsyncThunk(
+  "goods/fetchSingleGoods",
+  async (id, thunkApi) => {
+    try {
+      const response = await apiGoods(`/products/${id}`);
+      return response.data;
+    } catch (e) {
+      return thunkApi.rejectWithValue(e.message);
+    }
+  }
+);
