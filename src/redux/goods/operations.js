@@ -28,6 +28,20 @@ export const fetchAllGoods = createAsyncThunk(
   }
 );
 
+export const fetchNextGoods = createAsyncThunk(
+  "goods/fetchNextGoods",
+  async (_, thunkApi) => {
+    try {
+      const state = thunkApi.getState();
+      const skipped = state.goods.skipped;
+      const response = await apiGoods(`/products?limit=10&skip=${skipped}`);
+      return response.data.products;
+    } catch (e) {
+      return thunkApi.rejectWithValue(e.message);
+    }
+  }
+);
+
 export const fetchSingleGood = createAsyncThunk(
   "goods/fetchSingleGoods",
   async (id, thunkApi) => {
