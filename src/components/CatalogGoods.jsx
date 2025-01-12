@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
-import { selectGoods } from "../redux/goods/selectors";
+import { selectGoods, selectSkip } from "../redux/goods/selectors";
 import { useEffect, useState } from "react";
 import { fetchAllGoods, fetchNextGoods } from "../redux/goods/operations";
 import { IoFilterSharp } from "react-icons/io5";
@@ -9,8 +9,21 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
 const CatalogGoods = () => {
   const [mobFilter, setMobFilter] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
   const visibleGoods = useSelector(selectGoods);
+  const skipped = useSelector(selectSkip);
+
+  useEffect(() => {
+    const handleBtnActivity = () => {
+      if (skipped > 10) {
+        setDisabled(false);
+      } else {
+        setDisabled(true);
+      }
+    };
+    handleBtnActivity();
+  }, [skipped]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,6 +64,7 @@ const CatalogGoods = () => {
       <ProductCard visibleGoods={visibleGoods} />
       <span className="flex justify-between mb-2.5">
         <button
+          disabled={disabled}
           type="button"
           className="flex items-center gap-1 btn-2 font-merriweather rounded-lg p-1.5 text-2"
         >
