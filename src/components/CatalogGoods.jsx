@@ -1,29 +1,38 @@
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
-import { selectGoods, selectSkip } from "../redux/goods/selectors";
+import { selectGoods } from "../redux/goods/selectors";
 import { useEffect, useState } from "react";
-import { fetchAllGoods, fetchNextGoods } from "../redux/goods/operations";
+import { fetchAllGoods } from "../redux/goods/operations";
 import { IoFilterSharp } from "react-icons/io5";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
 const CatalogGoods = () => {
   const [mobFilter, setMobFilter] = useState(false);
-  const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
-  const visibleGoods = useSelector(selectGoods);
-  const skipped = useSelector(selectSkip);
+  const goods = useSelector(selectGoods);
+  const [firstItem, setFirstItem] = useState(0);
+  const [lastItem, setLastItem] = useState(12);
 
-  useEffect(() => {
-    const handleBtnActivity = () => {
-      if (skipped > 10) {
-        setDisabled(false);
-      } else {
-        setDisabled(true);
-      }
-    };
-    handleBtnActivity();
-  }, [skipped]);
+  const visibleGoods = goods.slice(firstItem, lastItem);
+
+  const handleNextGoods = () => {
+    scrollTo({
+      behavior: "smooth",
+      top: "start",
+    });
+    setFirstItem(firstItem + 12);
+    setLastItem(lastItem + 12);
+  };
+
+  const handlePreviousGoods = () => {
+    scrollTo({
+      behavior: "smooth",
+      top: "start",
+    });
+    setFirstItem(firstItem - 12);
+    setLastItem(lastItem - 12);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,14 +54,6 @@ const CatalogGoods = () => {
     dispatch(fetchAllGoods());
   }, [dispatch]);
 
-  const handleNextGoods = () => {
-    dispatch(fetchNextGoods());
-    scrollTo({
-      behavior: "smooth",
-      top: "start",
-    });
-  };
-
   return (
     <>
       <span className="flex items-center mb-2.5 p-2 md:px-3 xl:justify-center xl:p-0 xl:mb-3.5">
@@ -64,9 +65,10 @@ const CatalogGoods = () => {
       <ProductCard visibleGoods={visibleGoods} />
       <span className="flex justify-between mb-2.5">
         <button
-          disabled={disabled}
+          disabled={firstItem === 0}
+          onClick={handlePreviousGoods}
           type="button"
-          className="flex items-center gap-1 btn-2 font-merriweather rounded-lg p-1.5 text-2"
+          className="disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-1 btn-2 font-merriweather rounded-lg p-1.5 text-2"
         >
           <MdKeyboardDoubleArrowLeft />
           Previous

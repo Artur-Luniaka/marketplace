@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchAllGoods,
-  fetchNextGoods,
   fetchSingleGood,
   fetchTopSalesGoods,
 } from "./operations";
@@ -11,7 +10,6 @@ const initialState = {
   item: null,
   loader: false,
   error: null,
-  skipped: 10,
 };
 
 const handlePending = (state) => {
@@ -26,7 +24,6 @@ const handleRejected = (state, action) => {
 const slice = createSlice({
   name: "goods",
   initialState,
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchTopSalesGoods.pending, handlePending)
@@ -38,11 +35,6 @@ const slice = createSlice({
       .addCase(fetchAllGoods.fulfilled, (state, action) => {
         state.loader = false;
         state.goods = action.payload;
-      })
-      .addCase(fetchNextGoods.fulfilled, (state, action) => {
-        state.loader = false;
-        state.goods = action.payload;
-        state.skipped += action.payload.length;
       })
       .addCase(fetchAllGoods.pending, handlePending)
       .addCase(fetchAllGoods.rejected, handleRejected)
