@@ -16,7 +16,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="font-merriweather flex justify-center mb-2.5 xs:flex-col md:flex-row md:items-center mx-3  xs:gap-4 md:gap-10 p-6 bg-2 text-2 rounded-lg box-border flex-wrap relative overflow-hidden">
+    <div className="font-merriweather flex justify-center mb-2.5 xs:flex-col md:flex-row md:items-center xs:gap-4 md:gap-10 p-6 bg-2 text-2 rounded-lg box-border flex-wrap relative overflow-hidden">
       <h2 className="text-3xl xl:text-4xl font-semibold font-merriweather text-center drop-shadow-lg md:w-80 xl:w-auto">
         STAY UP TO DATE ABOUT OUR LATEST OFFERS
       </h2>
