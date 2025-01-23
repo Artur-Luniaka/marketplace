@@ -3,12 +3,11 @@ import { fetchSingleGood } from "../redux/goods/operations";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { selectIsLoader, selectItem } from "../redux/goods/selectors";
-import Rating from "../components/ReactStars";
+import Rating from "../components/Rating";
 
 const ProductDetailsPage = () => {
   const { productId } = useParams();
   const item = useSelector(selectItem);
-  console.log(item);
 
   const formattedDate = (rawDate) =>
     new Date(rawDate).toLocaleDateString("en-EN", {
@@ -76,9 +75,9 @@ const ProductDetailsPage = () => {
               Price: <span className="font-bold">{item.price}$</span>
             </p>
             <p>Sale: {item.discountPercentage}%</p>
-            <p>
-              <Rating rating={item.rating} size="35" edit={true} />
-            </p>
+
+            <Rating rating={item.rating} size={35} edit={true} />
+
             <p>Status: {item.availabilityStatus}</p>
           </div>
           <div className="mb-1">
@@ -100,9 +99,9 @@ const ProductDetailsPage = () => {
           {item.reviews.map((review, index) => (
             <li key={index + 1} className="bg-2 rounded-lg p-2">
               <p className="font-bold">{review.reviewerName}</p>
-              <p>
-                <Rating rating={review.rating} />
-              </p>
+
+              <Rating rating={review.rating} />
+
               <p className="italic">{review.comment}</p>
               <p className="text-sm">{formattedDate(review.date)}</p>
               <p className="text-slate-400">{review.reviewerEmail}</p>
