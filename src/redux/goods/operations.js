@@ -39,3 +39,14 @@ export const fetchSingleGood = createAsyncThunk(
     }
   }
 );
+export const fetchALLCategory = createAsyncThunk(
+  "goods/fetchALLCategory",
+  async (id, thunkApi) => {
+    try {
+      const response = await apiGoods("/products/categories");
+      return response.data;
+    } catch (e) {
+      return thunkApi.rejectWithValue(e.message);
+    }
+  }
+);
