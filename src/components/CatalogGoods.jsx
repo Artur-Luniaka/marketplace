@@ -17,11 +17,8 @@ const CatalogGoods = () => {
   const [lastItem, setLastItem] = useState(12);
 
   const handleShowsFilter = () => {
-    if (showFilter) {
-      setShowFilter(false);
-    } else {
-      setShowFilter(true);
-    }
+    if (showFilter) return setShowFilter(false);
+    if (!showFilter) return setShowFilter(true);
   };
 
   const visibleGoods = goods.slice(firstItem, lastItem);

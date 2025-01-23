@@ -18,10 +18,18 @@ export const fetchTopSalesGoods = createAsyncThunk(
 );
 export const fetchAllGoods = createAsyncThunk(
   "goods/fetchAllGoods",
-  async (_, thunkApi) => {
+  async (category = null, thunkApi) => {
     try {
-      const response = await apiGoods("/products?limit=0");
-      return response.data.products;
+      if (category === null) {
+        const response = await apiGoods(`/products?limit=0`);
+        return response.data.products;
+      }
+      if (category !== null) {
+        const response = await apiGoods(
+          `/products/category/${category}?limit=0`
+        );
+        return response.data.products;
+      }
     } catch (e) {
       return thunkApi.rejectWithValue(e.message);
     }
