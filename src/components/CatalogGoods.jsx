@@ -3,16 +3,23 @@ import ProductCard from "./ProductCard";
 import { selectGoods } from "../redux/goods/selectors";
 import { useEffect, useState } from "react";
 import { fetchAllGoods } from "../redux/goods/operations";
-import { IoFilterSharp } from "react-icons/io5";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import { IoFilterSharp } from "react-icons/io5";
+import MobTabFilter from "./MobTabFilter";
 
 const CatalogGoods = () => {
   const [mobFilter, setMobFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
   const goods = useSelector(selectGoods);
   const [firstItem, setFirstItem] = useState(0);
   const [lastItem, setLastItem] = useState(12);
+
+  const handleShowsFilter = () => {
+    if (showFilter) return setShowFilter(false);
+    if (!showFilter) return setShowFilter(true);
+  };
 
   const visibleGoods = goods.slice(firstItem, lastItem);
 
@@ -55,13 +62,20 @@ const CatalogGoods = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <span className="flex items-center mb-2.5 p-2 md:px-3 xl:justify-center xl:p-0 xl:mb-3.5">
+    <div className="relative">
+      <span className="flex justify-between items-center mb-2.5 p-2 md:px-3 xl:justify-center xl:p-0 xl:mb-3.5">
         <h1 className="text-1 font-gambetta text-3xl md:text-4xl xl:text-6xl">
           Catalog
         </h1>
-        {mobFilter ? <IoFilterSharp className="text-1 ml-auto text-2xl" /> : ""}
+        {mobFilter ? (
+          <button onClick={handleShowsFilter}>
+            <IoFilterSharp className="text-1 ml-auto text-2xl" />
+          </button>
+        ) : (
+          ""
+        )}
       </span>
+      {showFilter && <MobTabFilter />}
       <ProductCard visibleGoods={visibleGoods} />
       <span className="flex justify-between mb-2.5">
         <button
@@ -82,7 +96,7 @@ const CatalogGoods = () => {
           <MdKeyboardDoubleArrowRight />
         </button>
       </span>
-    </>
+    </div>
   );
 };
 
