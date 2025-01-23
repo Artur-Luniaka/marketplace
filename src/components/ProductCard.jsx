@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Rating from "../components/ReactStars.jsx";
+import Rating from "./Rating.jsx";
 
 const ProductCard = ({ visibleGoods }) => {
   return (
