@@ -22,7 +22,6 @@
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.0.2",
-    "react-stars": "^2.2.5",
     "redux-persist": "^6.0.0",
     "yup": "^1.6.1"
   },
