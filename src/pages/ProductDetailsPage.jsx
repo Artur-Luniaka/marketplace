@@ -3,7 +3,7 @@ import { fetchSingleGood } from "../redux/goods/operations";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { selectIsLoader, selectItem } from "../redux/goods/selectors";
-import Rating from "../components/Rating";
+import StarsRating from "../components/StarsRating";
 
 const ProductDetailsPage = () => {
   const { productId } = useParams();
@@ -76,7 +76,7 @@ const ProductDetailsPage = () => {
             </p>
             <p>Sale: {item.discountPercentage}%</p>
 
-            <Rating rating={item.rating} size={35} edit={true} />
+            <StarsRating rating={item.rating} />
 
             <p>Status: {item.availabilityStatus}</p>
           </div>
@@ -100,7 +100,7 @@ const ProductDetailsPage = () => {
             <li key={index + 1} className="bg-2 rounded-lg p-2">
               <p className="font-bold">{review.reviewerName}</p>
 
-              <Rating rating={review.rating} />
+              <StarsRating rating={review.rating} size={100} />
 
               <p className="italic">{review.comment}</p>
               <p className="text-sm">{formattedDate(review.date)}</p>

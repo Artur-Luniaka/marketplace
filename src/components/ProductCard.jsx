@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Rating from "./Rating.jsx";
+import StarsRating from "./StarsRating";
 
 const ProductCard = ({ visibleGoods }) => {
   return (
@@ -19,7 +19,7 @@ const ProductCard = ({ visibleGoods }) => {
               {item.title}
             </h3>
             <span className="flex place-items-center gap-0.5">
-              <Rating rating={item.rating} />
+              <StarsRating rating={item.rating} size={140} />
               <p className="text-2 font-merriweather">{item.rating} / 5</p>
             </span>
             <p className="text-2 font-bold font-merriweather">{item.price} $</p>
