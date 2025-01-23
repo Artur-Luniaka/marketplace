@@ -77,7 +77,7 @@ const ProductDetailsPage = () => {
             </p>
             <p>Sale: {item.discountPercentage}%</p>
             <p>
-              <Rating rating={item.rating} size="35" edit="true" />
+              <Rating rating={item.rating} size="35" edit={true} />
             </p>
             <p>Status: {item.availabilityStatus}</p>
           </div>

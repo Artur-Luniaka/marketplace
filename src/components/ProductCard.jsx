@@ -1,4 +1,3 @@
-// import { TiStar } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import Rating from "../components/ReactStars.jsx";
 
@@ -20,11 +19,6 @@ const ProductCard = ({ visibleGoods }) => {
               {item.title}
             </h3>
             <span className="flex place-items-center gap-0.5">
-              {/* <TiStar className="text-gray-500 text-lg" />
-              <TiStar className="text-gray-500 text-lg" />
-              <TiStar className="text-gray-500 text-lg" />
-              <TiStar className="text-gray-500 text-lg" />
-              <TiStar className="text-gray-500 text-lg" /> */}
               <Rating rating={item.rating} />
               <p className="text-2 font-merriweather">{item.rating} / 5</p>
             </span>

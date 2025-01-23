@@ -1,4 +1,4 @@
-import ReactStars from "react-rating-stars-component";
+import ReactStars from "react-stars";
 
 const Rating = ({ rating, size = 24, edit = false }) => {
   return (
