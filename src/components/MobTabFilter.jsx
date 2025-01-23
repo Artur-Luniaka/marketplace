@@ -19,9 +19,11 @@ const MobTabFilter = () => {
   }, [dispatch]);
   return (
     <>
-      <div className="flex flex-col absolute bg-2 z-10 h-full w-full p-2.5 opacity-85">
-        <h2 className="font-gambetta text-xl text-2 mx-auto mt-2.5">Filters</h2>
-        <h3 className="font-gambetta text-lg text-2 my-2">
+      <div className="flex flex-col absolute bg-3 z-10 h-auto w-full p-2.5 opacity-75 rounded-xl">
+        <h2 className="font-gambetta text-xl text-3 mx-auto mt-2.5 md:text-3xl">
+          Filters
+        </h2>
+        <h3 className="font-gambetta text-lg text-3 my-2 md:text-2xl">
           <button onClick={handleCategoriesList}>Categories</button>
         </h3>
         {isShow && <CategoryList goodsList={goodsList} />}

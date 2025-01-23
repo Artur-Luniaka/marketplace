@@ -6,7 +6,10 @@ const CategoryList = ({ goodsList }) => {
   return (
     <ul className="flex flex-col mx-auto text-center gap-2">
       {goodsList.map((item) => (
-        <li className="font-merriweather text-2 text-sm" key={item.name}>
+        <li
+          className="font-merriweather text-3 text-sm md:text-lg"
+          key={item.name}
+        >
           <a onClick={() => dispatch(fetchAllGoods(item.slug))}>{item.name}</a>
         </li>
       ))}
