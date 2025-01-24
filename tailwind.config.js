@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       width: {
-        "screen-60": "60vw", // Создаём класс w-screen-70
+        "screen-60": "60vw",
       },
       animation: {
         sweep: "sweep 2s linear infinite",

@@ -72,3 +72,14 @@
 .font-merriweather {
   font-family: var(--font-merriweather);
 }
+
+/* Test classes for Swiper */
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
