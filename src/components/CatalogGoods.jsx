@@ -22,6 +22,7 @@ const CatalogGoods = () => {
   };
 
   const visibleGoods = goods.slice(firstItem, lastItem);
+  console.log(visibleGoods);
 
   const handleNextGoods = () => {
     scrollTo({
