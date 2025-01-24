@@ -7,7 +7,7 @@ const ProductCard = ({ visibleGoods }) => {
       {visibleGoods.map((item) => (
         <li
           key={item.id}
-          className="bg-2 p-2.5 rounded-lg mx-auto md:w-[350px] md:mx-0 xl:w-[400px]"
+          className="bg-2 p-2.5 rounded-lg mx-auto md:w-[350px] md:mx-0 xl:w-[320px]"
         >
           <Link to={`/catalog/${item.id}`}>
             <img

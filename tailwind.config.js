@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
+      width: {
+        "screen-60": "60vw", // Создаём класс w-screen-70
+      },
       animation: {
         sweep: "sweep 2s linear infinite",
       },
