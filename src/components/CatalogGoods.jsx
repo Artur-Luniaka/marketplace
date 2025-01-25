@@ -1,53 +1,63 @@
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
-import { selectGoods } from "../redux/goods/selectors";
+import {
+  selectFirstItem,
+  selectGoods,
+  selectLastItem,
+  selectShowFilter,
+} from "../redux/goods/selectors";
 import { useEffect, useState } from "react";
 import { fetchAllGoods } from "../redux/goods/operations";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { IoFilterSharp } from "react-icons/io5";
 import MobTabFilter from "./MobTabFilter";
+import {
+  closeFilter,
+  nextGoods,
+  openFilter,
+  previousGoods,
+} from "../redux/goods/slice";
 
 const CatalogGoods = () => {
   const dispatch = useDispatch();
   const goods = useSelector(selectGoods);
   const [mobFilter, setMobFilter] = useState(false);
-  const [showFilter, setShowFilter] = useState(false);
+  const showFilter = useSelector(selectShowFilter);
   const [isDisabled, setIsDisabled] = useState(false);
-  const [firstItem, setFirstItem] = useState(0);
-  const [lastItem, setLastItem] = useState(12);
+  const firstItem = useSelector(selectFirstItem);
+  const lastItem = useSelector(selectLastItem);
 
   const visibleGoods = goods.slice(firstItem, lastItem);
 
   const handleShowsFilter = () => {
-    if (showFilter) return setShowFilter(false);
-    if (!showFilter) return setShowFilter(true);
+    if (!showFilter) return dispatch(openFilter());
+    if (showFilter) return dispatch(closeFilter());
   };
 
   const handleNextGoods = () => {
-    scrollTo({
-      behavior: "smooth",
-      top: "start",
-    });
-    setFirstItem(firstItem + 12);
-    setLastItem(lastItem + 12);
+    dispatch(nextGoods());
   };
 
   const handlePreviousGoods = () => {
-    scrollTo({
-      behavior: "smooth",
-      top: "start",
-    });
-    setFirstItem(firstItem - 12);
-    setLastItem(lastItem - 12);
+    dispatch(previousGoods());
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 0,
+    });
+  }, [firstItem, lastItem, goods.length, visibleGoods.length]);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1280) {
         setMobFilter(true);
+        dispatch(closeFilter());
       } else {
         setMobFilter(false);
+        dispatch(closeFilter());
       }
     };
     handleResize();
@@ -56,24 +66,22 @@ const CatalogGoods = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchAllGoods());
-    setFirstItem(0);
-    setLastItem(12);
   }, [dispatch]);
 
   useEffect(() => {
     const handleDisabledBtn = () => {
-      if (goods.length === lastItem) return setIsDisabled(true);
-      if (goods.length !== lastItem) return setIsDisabled(false);
+      if (goods.length > lastItem) return setIsDisabled(false);
+      if (goods.length <= lastItem) return setIsDisabled(true);
     };
     handleDisabledBtn();
   }, [goods.length, lastItem]);
 
   return (
-    <div className="relative">
+    <div className="relative order-1">
       <span className="flex justify-between items-center mb-2.5 p-2 md:px-3 xl:justify-center xl:p-0 xl:mb-3.5">
         <h1 className="text-1 font-gambetta text-3xl md:text-4xl xl:text-6xl">
           Catalog

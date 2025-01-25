@@ -20,7 +20,7 @@ const CatalogPage = () => {
     };
   }, []);
   return (
-    <div className="flex justify-center xl:flex-row-reverse">
+    <div className="flex justify-around">
       <CatalogGoods />
       {webFilter && <WebFilter />}
     </div>

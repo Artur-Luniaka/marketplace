@@ -19,7 +19,7 @@ const WebFilter = () => {
   }, [dispatch]);
 
   return (
-    <aside className="bg-3 min-w-[230px] mb-auto mr-auto opacity-80 rounded-xl p-3">
+    <aside className="bg-3 min-w-[230px] mb-auto opacity-80 rounded-xl p-3">
       <div className="flex flex-col">
         <h2 className="font-gambetta text-3 mx-auto text-2xl mb-2.5">
           Filters

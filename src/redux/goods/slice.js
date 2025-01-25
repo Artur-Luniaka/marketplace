@@ -12,6 +12,9 @@ const initialState = {
   item: null,
   loader: false,
   error: null,
+  firstShowedItem: 0,
+  lastShowedItem: 12,
+  showFilter: false,
 };
 
 const handlePending = (state) => {
@@ -26,6 +29,26 @@ const handleRejected = (state, action) => {
 const slice = createSlice({
   name: "goods",
   initialState,
+  reducers: {
+    previousGoods: (state) => {
+      state.firstShowedItem -= 12;
+      state.lastShowedItem -= 12;
+    },
+    nextGoods: (state) => {
+      state.firstShowedItem += 12;
+      state.lastShowedItem += 12;
+    },
+    countDown: (state) => {
+      state.firstShowedItem = 0;
+      state.lastShowedItem = 12;
+    },
+    openFilter: (state) => {
+      state.showFilter = true;
+    },
+    closeFilter: (state) => {
+      state.showFilter = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchTopSalesGoods.pending, handlePending)
@@ -54,3 +77,5 @@ const slice = createSlice({
 });
 
 export const goodsReducer = slice.reducer;
+export const { previousGoods, nextGoods, countDown, openFilter, closeFilter } =
+  slice.actions;
