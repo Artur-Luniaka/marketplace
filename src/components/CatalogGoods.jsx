@@ -9,20 +9,20 @@ import { IoFilterSharp } from "react-icons/io5";
 import MobTabFilter from "./MobTabFilter";
 
 const CatalogGoods = () => {
-  const [mobFilter, setMobFilter] = useState(false);
-  const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
   const goods = useSelector(selectGoods);
+  const [mobFilter, setMobFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [firstItem, setFirstItem] = useState(0);
   const [lastItem, setLastItem] = useState(12);
+
+  const visibleGoods = goods.slice(firstItem, lastItem);
 
   const handleShowsFilter = () => {
     if (showFilter) return setShowFilter(false);
     if (!showFilter) return setShowFilter(true);
   };
-
-  const visibleGoods = goods.slice(firstItem, lastItem);
-  console.log(visibleGoods);
 
   const handleNextGoods = () => {
     scrollTo({
@@ -60,7 +60,17 @@ const CatalogGoods = () => {
 
   useEffect(() => {
     dispatch(fetchAllGoods());
+    setFirstItem(0);
+    setLastItem(12);
   }, [dispatch]);
+
+  useEffect(() => {
+    const handleDisabledBtn = () => {
+      if (goods.length === lastItem) return setIsDisabled(true);
+      if (goods.length !== lastItem) return setIsDisabled(false);
+    };
+    handleDisabledBtn();
+  }, [goods.length, lastItem]);
 
   return (
     <div className="relative">
@@ -89,9 +99,10 @@ const CatalogGoods = () => {
           Previous
         </button>
         <button
+          disabled={isDisabled}
           onClick={handleNextGoods}
           type="button"
-          className="flex items-center gap-1 btn-2 font-merriweather rounded-lg p-1.5 text-2"
+          className="disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-1 btn-2 font-merriweather rounded-lg p-1.5 text-2"
         >
           Next
           <MdKeyboardDoubleArrowRight />
